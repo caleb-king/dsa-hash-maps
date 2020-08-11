@@ -1,0 +1,36 @@
+constant time - O(1)
+logarithmic time - O(log(n))
+linear time - O(n)
+polynomial time - O(n^k)
+exponential time - O(2^n)
+
+(See index.js for implementation of Stack class and supplemental functions)
+
+1. Create a HashMap class
+    - What are the values of Maiar and Hobbit that you have? Is there a discrepancy? Explain your answer.
+        - 'Maiar' = 'Sauron'
+        - 'Hobbit' = 'Frodo'
+        - The "discrepancy" is due to setting different values for the same key - the last 'set()' will overwrite the first. So, the resultant overwriting of 'Bilbo' and 'The Necromancer' were to be expected.
+    - What is the capacity of your hash table after you have hashed all the above items? Explain your answer.
+        - '_capacity' = 24
+        - The initial capacity was 8. Once the 'MAX_LOAD_RATIO' of 50% was exceeded, '_resize()' was called with the size parameter having a value of 24.
+        - 24 came from multiplying the '_capacity' - 8 - by the 'HashMap.SIZE_RATIO' - 3.
+2. WhatDoesThisDo
+    - What is the output of the following code? explain your answer.
+        - The output is 20 on the first line and then 10 on the next.
+        - Explanation: First, note that 'str1', 'str2', 'str3', and 'str4' are all equivalent to 'Hello World.' So, all 4 set operations are using the exact same key. In the first hashmap, the second set() overwrites the first, leaving the value associated with the key 'Hello World.' to be 20. In the second hashmap, the second set() overwrites the first leaving the value associated with the key 'Hello World.' to be 10.
+3. Demonstrate understanding of Hash maps
+    1) [ 22, 88, undefined, undefined, 4, 15, 28, 17, 59, 31, 10 ]
+    2) [ undefined, 28 -> 19 -> 10, 20, 12, undefined, 5, 15 -> 33, undefined, 17 ]
+4. Remove duplicates
+    - worst case: O(n^2)
+    - avg case: O(n)
+5. Any permutation a palindrome
+    - worst case: O(n^2)
+    - avg case: O(n)
+6. Anagram grouping
+    - 
+7. Separate Chaining
+    - 
+
+
